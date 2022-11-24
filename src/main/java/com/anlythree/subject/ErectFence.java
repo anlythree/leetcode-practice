@@ -1,12 +1,10 @@
-package com.anlythree;
+package com.anlythree.subject;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 /**
  * 2022-04-23

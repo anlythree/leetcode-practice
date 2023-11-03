@@ -1,10 +1,11 @@
 package com.anlythree.subject;
 
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
+/**
+ * 链表类型结构的深度优先遍历和广度优先遍历
+ */
 public class Graph {
     public static void dfs(Node node) {
         if (node == null) {
@@ -28,6 +29,33 @@ public class Graph {
                 }
             }
         }
+    }
+
+    public static void bfs(Node node){
+        if(node == null){
+            return;
+        }
+        Queue<Node> queue = new ArrayDeque<Node>();
+        Set<Node> sets = new HashSet<>();
+        queue.add(node);
+        sets.add(node);
+        // 遍历操作
+        System.out.println("遍历节点:"+node.value);
+        while(!queue.isEmpty()){
+            Node poll = queue.poll();
+            for (Node next :poll.nexts){
+                if(sets.contains(next)){
+                    continue;
+                }
+                queue.add(node);
+                queue.add(next);
+                sets.add(node);
+                //  遍历操作
+                System.out.println("遍历节点:"+next.value);
+                break;
+            }
+        }
+
     }
 
 
